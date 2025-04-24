@@ -1,0 +1,35 @@
+:root {
+    --primary-color: #B9BAB4;
+    --card-background-color: #1D1D1E;
+    --text-color: #FFFF;
+}
+
+body {
+    font-family: Open Sans;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.page-header {
+    background-image: url("./assets/background-img/sl_031420_28950_04.jpg");
+    max-width: 1300px;
+}
+
+.header-img {
+    width: 500px;
+    height: auto;
+}
+
+.contact svg,
+.links svg {
+    width: 25px;
+    transition: scale ease-in-out 200ms;
+}
+
+.contact svg:hover,
+.links svg:hover {
+    scale: 1.2;
+}
