@@ -91,7 +91,7 @@ picture .name {
 
 .works {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
 }
 
@@ -129,22 +129,30 @@ picture .name {
     text-align: justify;
 }
 
+footer {
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(0, 153, 255), rgb(0, 191, 255));
+}
+
 .page-footer {
     display: flex;
     gap: 20px;
-    background: linear-gradient(to bottom, rgb(0, 153, 255), rgb(0, 191, 255));
-    width: 100%;
     box-sizing: border-box;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .footer-details {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 .email {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 5px;
 }
@@ -154,5 +162,16 @@ picture .name {
 }
 
 .footer-img {
-    max-width: 300px;
+    max-width: 400px;
+    height: auto;
+}
+
+.copyright {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: small;
+    font-weight: bold;
+    color: white;
 }
