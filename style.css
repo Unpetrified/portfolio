@@ -2,6 +2,7 @@
     --primary-color: #B9BAB4;
     --background-color: #1D1D1E;
     --text-color: #FFFF;
+    --page-margin: 100px;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 .page-header,
 .my-work,
 .page-footer {
-    padding: 0 100px;
+    padding: 0 var(--page-margin);
 }
 
 .page-header {
@@ -26,13 +27,15 @@ body {
     align-items: center;
     justify-content: baseline;
     padding-top: 50px;
+    background: linear-gradient(to bottom, rgb(0, 153, 255), rgb(0, 191, 255), white);
 }
 
 picture {
     position: relative;
 }
 
-.header-img {
+.header-img,
+.footer-img {
     max-width: 400px;
     height: auto;
 }
@@ -79,7 +82,7 @@ picture .name {
 
 .my-work {
     padding: 40px 0;
-    margin: 0 100px;
+    margin: 0 var(--page-margin);
     background-image: url("./assets/background-img/sl_031420_28950_04.jpg");
     object-fit: cover;
     background-size: contain;
@@ -161,11 +164,6 @@ footer {
     margin: 0;
 }
 
-.footer-img {
-    max-width: 400px;
-    height: auto;
-}
-
 .copyright {
     margin: 0;
     padding: 10px 0;
@@ -174,4 +172,88 @@ footer {
     font-size: small;
     font-weight: bold;
     color: white;
+}
+
+/* tablet view */
+@media (max-width: 1000px) {
+    :root {
+        --translate-y : -35px;
+        --page-margin : 75px;
+    }
+
+    .page-header {
+        all: unset;
+    }
+
+    .page-header,
+    .my-work,
+    .page-footer {
+        padding: 0 var(--page-margin);
+    }
+
+    .page-header {
+        padding-top: calc(-1*var(--translate-y) + 20px);
+        margin-bottom: 15px;
+        background: linear-gradient(to bottom, rgb(0, 153, 255), rgb(0, 191, 255), white);
+    }
+
+    .header-img,
+    .footer-img {
+        max-width: 41vw;
+    }
+
+    .header-img {
+        float: left;
+        margin: 0;
+        transform: translate(-20px, var(--translate-y));
+    }
+
+    picture .name {
+        display: none;
+    }
+
+    .about::before {
+        content: "Kingsley Obiefuna";
+        width: calc(100vw - var(--page-margin)*2);
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(10px, 8px);
+        text-align: center;
+        font-size: xx-large;
+        font-weight: bolder;
+        color: white;
+    }
+
+    .about p {
+        transform: translateY(var(--translate-y));
+        padding-top: calc(var(--translate-y)/2*-1);
+    }
+
+    .contact {
+        display: none;
+    }
+
+    .my-work {
+        margin: 0 var(--page-margin);
+        padding: 20px 0;
+    }
+
+    .works {
+        grid-template-columns: repeat(auto-fill, minmax(251px, 1fr 1fr));
+        gap: 10px;
+    }
+
+    .page-footer {
+        gap: 10px;
+        padding: 10px 45px;
+    }
+}
+
+/* mobile view */
+@media (max-width:600px) {
+    .header-img,
+    .footer-img {
+        max-width: 200px;
+    }
 }
