@@ -186,8 +186,7 @@ footer {
     }
 
     .page-header,
-    .my-work,
-    .page-footer {
+    .my-work {
         padding: 0 var(--page-margin);
     }
 
@@ -230,7 +229,7 @@ footer {
         padding-top: calc(var(--translate-y)/2*-1);
     }
 
-    .contact {
+    .about .contact {
         display: none;
     }
 
@@ -252,8 +251,66 @@ footer {
 
 /* mobile view */
 @media (max-width:600px) {
-    .header-img,
+    :root {
+        --page-margin : 20px;
+    }
+
+    .page-header {
+        all: unset;
+    }
+
+    .page-header,
+    .my-work,
+    .page-footer {
+        padding: 0 var(--page-margin);
+    }
+
+    .page-header {
+        background: linear-gradient(to bottom, rgb(0, 153, 255), rgb(0, 191, 255), white, white, white);
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .header-img {
+        all: unset;
+        width: 80%;
+    }
+
+    picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    picture .name {
+        display: block;
+    }
+
+    .about::before {
+        all: unset;
+    }
+
+    .about {
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .about .contact {
+        display: flex;
+        justify-content: center;
+    }
+
+    .my-work {
+        padding: 20px 0;
+    }
+
+    .page-footer {
+        display: flex;
+        flex-direction: column;
+    }
+ 
     .footer-img {
-        max-width: 200px;
+        max-width: 100%;
     }
 }
